@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Valed Tour (WebXR Wrapper)</title>
+
+    <!-- Load WebXR polyfill BEFORE 3DVista content -->
+    <script src="Valed_rendered/webxr-polyfill.js"></script>
+
+    <style>
+      html, body, iframe {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        background: black;
+        overflow: hidden;
+      }
+      .fallback {
+        color: white;
+        text-align: center;
+        padding-top: 40vh;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Try loading the 3DVista page inside an iframe -->
+    <iframe
+      id="tour"
+      src="Valed_rendered/index.html"
+      allow="xr-spatial-tracking; vr; fullscreen;"
+    ></iframe>
+
+    <noscript>
+      <div class="fallback">Please enable JavaScript to view the VR tour.</div>
+    </noscript>
+  </body>
+</html>
